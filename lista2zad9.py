@@ -1,0 +1,4 @@
+from itertools import chain                     #importujemy bibliotekę 'itertools', w której zawarta jest funkcja 'chain'
+lista=[[2, 4, 3], [1, 5, 6], [9], [7, 9, 0]]    #nasza bazowa lista, w której zawarte są mniejsze listy 
+a=list(chain.from_iterable(lista))              #za pomocą funkcji 'chain' tworzymy nową listę "a" składającą się z pojedynczych elementów
+print(a)                                        #działanie funkcji 'chain' tworzy iterator (obiekt pozwalający na sekwencyjny dostęp do wszystkich elementów listy), który zwraca kolejne elementy z pierwszej "podlisty", a po skończeniu przechodzi do nastepnej "podlisty", aż do ich wyczerpania
