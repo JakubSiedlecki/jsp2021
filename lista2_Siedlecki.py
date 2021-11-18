@@ -1,1 +1,0 @@
-print("Lista 2 zadanie 1")
