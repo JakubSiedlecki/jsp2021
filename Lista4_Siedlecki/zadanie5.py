@@ -2,7 +2,7 @@ import itertools
 
 lista=[]
 n = int(input("Podaj ilość elementów w liście: "))
-for i in range(0,n):
+for i in range(n):
     element=int(input("Podaj elelemnt (liczba cąłkowita): "))
     lista.append(element)
 

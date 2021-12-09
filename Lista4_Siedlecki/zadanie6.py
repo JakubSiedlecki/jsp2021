@@ -1,9 +1,31 @@
-import colorsys
+R = int(input("Podaj wartość R: "))
+G = int(input("Podaj wartość G: "))
+B = int(input("Podaj wartość B: "))
 
-print("Dla RGB podaj liczbę całkowitą z przedziału <0;255>")
+R = R/255
+G = G/255
+B = B/255
 
-R=int(input("Wartość Red: "))
-G=int(input("Wartość Green: "))
-B=int(input("Wartość Blue: "))
+Cmax = max(R,G,B)    #max wartości R,G,B
+Cmin = min(R,G,B)    #min wartości R,G,B
+diff = Cmax-Cmin         
 
-hsv=list(colorsys.rgb_to_hsv(R/255,G/255,B/255))
+# jeśli Cmax = Cmin wtedy h = 0
+if Cmax == Cmin:
+    h = 0
+# jeśli Cmax = R oblicz h tak samo dla Cmax = G,B
+elif Cmax == R:
+    h = (60*((G-B)/diff)+360)%360
+elif Cmax == G:
+    h = (60*((B-R)/diff)+120)%360
+elif Cmax == B:
+    h = (60*((R-B)/diff)+240)%360
+
+if Cmax == 0:
+    s = 0
+else:
+    s = (diff/Cmax)*100
+
+v = Cmax*100
+
+print("Wartości w HSV: ","H =" ,h, "S =" ,s, "V =",v)
